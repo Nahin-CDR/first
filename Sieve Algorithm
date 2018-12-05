@@ -1,0 +1,52 @@
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int i,number,j;
+    cout<<"Enter the size of array : "<<endl;
+    cin>>number;
+    if(number==0 || number == 1)
+    {
+        cout<<"OPPSS...!\nthere is no prime number on the range you have entered!\n";
+    }
+    else
+    {
+        int array[number];
+    for(i=2;i<=number;i++)
+    {
+        array[i]=i;
+    }
+    i=2;
+    while((i*i)<=number)
+    {
+        if(array[i]!=0)
+        {
+            for(j=2;j<number;j++)
+            {
+                if((array[i]*j)>number)
+                {
+                    break;
+                }
+                else
+                {
+                    array[array[i]*j]=0;
+                }
+            }
+        }
+        i++;
+    }
+    cout<<"prime numbers : "<<endl;
+    for(int k=2;k<=number;k++)
+    {
+        if(array[k]!=0)
+        {
+            cout<<array[k]<<endl;
+        }
+    }
+    }
+
+
+
+    return 0;
+}
